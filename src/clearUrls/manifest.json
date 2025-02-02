@@ -1,13 +1,13 @@
 {
   "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
   "id": "clearUrls",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiLevel": 2,
   "dependencies": ["commands"],
   "meta": {
     "name": "Clear URLs",
-    "tagline": "Removes analytics paramaters from urls when sending messages",
-    "description": "Removes analytics paramaters from urls when sending messages",
+    "tagline": "Removes analytics parameters from urls when sending messages",
+    "description": "Removes analytics parameters from urls when sending messages",
     "authors": ["adryd", "Cynosphere", "Tiemen"],
     "tags": ["chat", "privacy"],
     "source": "https://github.com/ThaTiemsz/moonlight-extensions/tree/main/src/clearUrls"
