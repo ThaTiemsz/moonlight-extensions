@@ -1,0 +1,23 @@
+{
+  "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
+  "id": "imgTitle",
+  "version": "1.0.0",
+  "apiLevel": 2,
+  "meta": {
+    "name": "Image Filename",
+    "tagline": "Displays the filename (or full URL) of image attachments on hover",
+    "description": "Displays the filename (or full URL) of image attachments on hover",
+    "authors": ["Tiemen"],
+    "tags": ["chat", "qol"],
+    "source": "https://github.com/ThaTiemsz/moonlight-extensions/tree/main/src/imgTitle"
+  },
+  "settings": {
+    "showFullUrl": {
+      "displayName": "Show full URL",
+      "description": "Show the full URL of the image instead of just the filename. Always enabled for GIF embeds.",
+      "type": "boolean",
+      "default": false,
+      "advice": "reload"
+    }
+  }
+}
