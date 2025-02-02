@@ -1,0 +1,14 @@
+{
+  "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
+  "id": "disableCsp",
+  "version": "1.0.0",
+  "apiLevel": 2,
+  "meta": {
+    "name": "Disable CSP",
+    "tagline": "Removes Content Security Policy and X-Frame-Options from response headers",
+    "description": "Removes Content Security Policy and X-Frame-Options from response headers",
+    "authors": ["Tiemen"],
+    "tags": ["dangerZone"],
+    "source": "https://github.com/ThaTiemsz/moonlight-extensions/tree/main/src/disableCsp"
+  }
+}
