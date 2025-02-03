@@ -1,4 +1,4 @@
-const imageFilenameRegex = /(?=[\S])[^\\\/:*?"<>|]+\.(?:png|jpe?g|webp|gif)/i;
+const imageFilenameRegex = /(?=[\S])[^\\\/:*?"<>|]+\.(?:png|jpe?g|webp|gif|avif)/i;
 const gifEmbedProviders = ["tenor.com", "imgur.com", "giphy.com"];
 
 export function handle(src: string) {
