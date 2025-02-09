@@ -17,3 +17,7 @@ Displays the filename (or full URL) of image attachments on hover
 Removes analytics paramaters from urls when sending messages
 
 ![Usage](https://github.com/user-attachments/assets/f2b77e84-dce7-4d4a-8c45-56915c48718b)
+
+### Translate Text
+
+Adds a translate button to context menus when you select text. Interacts with the Google Translate API.
