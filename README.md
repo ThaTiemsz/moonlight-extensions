@@ -21,3 +21,5 @@ Removes analytics paramaters from urls when sending messages
 ### Translate Text
 
 Adds a translate button to context menus when you select text. Interacts with the Google Translate API.
+
+![Usage](https://github.com/user-attachments/assets/a8be13a5-d249-488f-895a-7b75c0600ef0)
