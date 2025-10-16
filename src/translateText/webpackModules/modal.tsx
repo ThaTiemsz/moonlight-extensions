@@ -1,16 +1,17 @@
 import ErrorBoundary from "@moonlight-mod/wp/common_ErrorBoundary";
 import type { openModal } from "@moonlight-mod/wp/discord/components/common/index";
 import {
-  FormSection,
+  // FormSection,
   ModalRoot,
   Scroller,
-  SearchableSelect,
+  // SearchableSelect,
   Text
 } from "@moonlight-mod/wp/discord/components/common/index";
-import { marginBottom20 } from "@moonlight-mod/wp/discord/styles/shared/Margins.css";
+import { marginBottom20, marginBottom8 } from "@moonlight-mod/wp/discord/styles/shared/Margins.css";
 import React, { useEffect, useState } from "@moonlight-mod/wp/react";
 import { IsoLangs } from "@moonlight-mod/wp/translateText_constants";
 import type * as nodeModule from "../node.ts";
+import spacepack from "@moonlight-mod/wp/spacepack_spacepack";
 
 type ModalProps = Parameters<Parameters<typeof openModal>[0]>[0];
 
@@ -55,12 +56,14 @@ export function TranslateTextModal({ text, transitionState }: ModalProps & { tex
     value: key
   }));
 
+  const SearchableSelect = spacepack.findByCode(".searchableSelect,{")[0].exports.V;
+
   return (
     <ErrorBoundary>
       <ModalRoot size="medium" transitionState={transitionState}>
         <Scroller fade>
           <div style={{ padding: 16 }}>
-            <div className={marginBottom20} style={{ display: "flex", gap: "15px" }}>
+            <div className={marginBottom8} style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
               {/* Google Translate uses auto detection no matter what... */}
               {/* <FormSection tag="h5" title="Translate from">
                 <SearchableSelect
@@ -76,41 +79,42 @@ export function TranslateTextModal({ text, transitionState }: ModalProps & { tex
                 />
               </FormSection> */}
 
-              <FormSection tag="h5" title="Translate to">
-                <SearchableSelect
-                  autofocus={false}
-                  clearable={false}
-                  placeholder="Language"
-                  options={languageOptions}
-                  value={toLang}
-                  onChange={(value: string) => {
-                    setToLang(value);
-                  }}
-                />
-              </FormSection>
+              <Text tag="h5" variant="text-lg/semibold">
+                Translate to
+              </Text>
+
+              <SearchableSelect
+                className={marginBottom20}
+                autofocus={false}
+                clearable={false}
+                placeholder="Language"
+                options={languageOptions}
+                value={toLang}
+                onChange={(value: string) => {
+                  setToLang(value);
+                }}
+              />
             </div>
 
-            <FormSection
-              tag="h5"
-              className={marginBottom20}
-              title={
-                fromLang
-                  ? autoDetected
-                    ? `Original Text (${fromLangName} - Detected)`
-                    : `Original Text (${fromLangName})`
-                  : "Original Text"
-              }
-            >
-              <Text selectable variant="text-sm/normal">
-                {text}
-              </Text>
-            </FormSection>
+            <Text tag="h5" variant="text-lg/semibold" className={marginBottom8}>
+              {fromLang
+                ? autoDetected
+                  ? `Original Text (${fromLangName} - Detected)`
+                  : `Original Text (${fromLangName})`
+                : "Original Text"}
+            </Text>
 
-            <FormSection tag="h5" className={marginBottom20} title={`Translated Text (${getLangName(toLang)})`}>
-              <Text selectable variant="text-sm/normal">
-                {translation ?? "Translating..."}
-              </Text>
-            </FormSection>
+            <Text selectable variant="text-md/normal" className={marginBottom20}>
+              {text}
+            </Text>
+
+            <Text tag="h5" variant="text-lg/semibold" className={marginBottom8}>
+              Translated Text ({getLangName(toLang)})
+            </Text>
+
+            <Text selectable variant="text-md/normal">
+              {translation ?? "Translating..."}
+            </Text>
           </div>
         </Scroller>
       </ModalRoot>

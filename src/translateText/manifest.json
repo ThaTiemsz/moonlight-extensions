@@ -1,12 +1,13 @@
 {
   "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
   "id": "translateText",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiLevel": 2,
   "meta": {
     "name": "Translate Text",
     "tagline": "Adds a translate button to context menus when you select text. Interacts with the Google Translate API.",
     "description": "Select text, right click, and press Translate in the context menu.\n\nInteractions with the Google Translate API.\n\nPlease note that results may vary from the official Google Translate website due to the extension using Google's older language models.",
+    "changelog": "### 1.0.1\n- Fixed errors.\n- Increased font size for better readability.",
     "authors": ["Tiemen"],
     "tags": ["contextMenu"],
     "source": "https://github.com/ThaTiemsz/moonlight-extensions/tree/main/src/translateText"
